@@ -1,0 +1,461 @@
+/* ===================== Global ===================== */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  background-color: #f1f3f6;
+  color: #333;
+}
+
+.parent-class {
+  padding-bottom: 40px;
+}
+
+/* ===================== App Root ===================== */
+#root {
+  height: 100%;
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+}
+#root::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+#root {
+  -ms-overflow-style: none; /* IE */
+}
+
+/* ===================== Header ===================== */
+.header {
+  height: 90px;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  flex-wrap: wrap;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: background 0.3s ease;
+}
+
+.header:hover {
+  background-color: #f9f9f9;
+}
+
+/* ===================== Search Component ===================== */
+.search input {
+  border: 2px solid #ccc;
+  border-radius: 6px 0 0 6px;
+  height: 35px;
+  width: 20em;
+  padding: 0 10px;
+  outline: none;
+  transition: border 0.2s ease;
+}
+
+.search input:focus {
+  border-color: #2874f0;
+  box-shadow: 0 0 5px rgba(40,116,240,0.3);
+}
+
+.search button {
+  background-color: #2874f0;
+  color: white;
+  height: 35px;
+  width: 7em;
+  border: 2px solid #2874f0;
+  border-left: none;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.search button:hover {
+  background-color: #0056d6;
+}
+
+/* ===================== Filter Component ===================== */
+.Filter select {
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  height: 35px;
+  width: 20em;
+  padding: 0 10px;
+  cursor: pointer;
+  transition: border 0.2s ease;
+}
+
+.Filter select:focus {
+  border-color: #2874f0;
+}
+
+/* ===================== Cart ===================== */
+.cart {
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  height: 35px;
+  width: 5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cart:hover {
+  background-color: #2874f0;
+  color: white;
+  border-color: #2874f0;
+}
+
+/* ===================== Product Page ===================== */
+.ProductPage {
+  margin: 0 100px;
+  position: relative;
+  top: 5em;
+}
+
+/* ===================== Product Grid ===================== */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 30px;
+  margin-top: 5%;
+}
+
+/* ===================== Product Card ===================== */
+.productCard {
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.productCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* Image + Title */
+.productImage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.productImage img {
+  width: 100%;
+  max-width: 260px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.productCard:hover .productImage img {
+  transform: scale(1.05);
+}
+
+.productImage p {
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+  color: #555;
+}
+
+/* Price + Cart Button */
+.price-cart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.price-cart button {
+  background-color: #2874f0;
+  color: white;
+  height: 3em;
+  width: 8em;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.price-cart button:hover {
+  background-color: #0056d6;
+  transform: scale(1.05);
+}
+
+/* ===================== Pagination ===================== */
+.pagination {
+  display: flex;
+  column-gap: 20px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 70px;
+  color: #2874f0;
+  cursor: pointer;
+}
+
+.indexing {
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  padding: 10px 12px;
+  transition: background 0.2s ease;
+}
+
+.indexing:hover {
+  background-color: #2874f0;
+  color: white;
+}
+
+/* ===================== Cart Page ===================== */
+/* Cart Page */
+.cartPage{
+  width:60%;
+  margin: 105px auto 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10%;
+ 
+}
+
+/* Center container */
+.CartItem-parent{
+  width:50%;
+  margin:0 auto;
+} 
+
+/* Cart row */
+.cartitems{
+  display:grid;
+  grid-template-columns: 120px 1fr 80px;
+  align-items:center;
+
+  padding:20px;
+  margin:12px 0;
+
+  border:1px solid #e0e0e0;
+  border-radius:12px;
+  background:#fff;
+}
+
+/* Image */
+.image img{
+  height:100px;
+  width:100px;
+  object-fit:contain;
+  border-radius:8px;
+}
+
+/* Description */
+.description{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.description p:first-child{
+  font-size:16px;
+  font-weight:600;
+}
+
+.description p:last-child{
+  font-size:14px;
+  color:#555;
+}
+
+/* Quantity controls */
+.actions{
+  display:flex;
+  align-items:center;
+  width:fit-content;
+
+  border:1px solid #ccc;
+  border-radius:8px;
+  overflow:hidden;
+}
+
+.actions button{
+  width:32px;
+  height:32px;
+  border:none;
+  background:#f2f2f2;
+  cursor:pointer;
+  font-size:16px;
+}
+
+.actions button:hover{
+  background:#e0e0e0;
+}
+
+.actions div{
+  width:40px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:500;
+}
+
+/* Remove button */
+.remove-button{
+  justify-self:end;
+  padding:6px 10px;
+  font-size:13px;
+  border:1px solid #d9534f;
+  color:#d9534f;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.remove-button:hover{
+  background:#d9534f;
+  color:white;
+}
+
+
+
+.cart-summary{
+  display:flex;
+  gap:40px;
+  align-items:center;
+}
+
+.summary-item{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+}
+
+.summary-item .label{
+  font-size:20px;
+  color:#2874f0;
+}
+
+.summary-item .value{
+  font-size:18px;
+  font-weight:600;
+}
+
+
+
+
+
+/* ===================== Logo ===================== */
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.logo-icon {
+  height: 40px;
+  width: 40px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #2874f0, #5a9bff);
+  color: white;
+  font-weight: 800;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(40, 116, 240, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.logo-wrap:hover .logo-icon {
+  transform: rotate(-6deg) scale(1.1);
+  box-shadow: 0 6px 16px rgba(40,116,240,0.45);
+}
+
+.logo-text {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.logo-main {
+  color: #111;
+}
+
+.logo-accent {
+  color: #2874f0;
+  margin-left: 2px;
+}
+
+/* ===================== Responsive ===================== */
+@media (max-width: 600px) {
+  .productCard {
+    max-width: 100%;
+  }
+
+  .productImage img {
+    max-width: 140px;
+  }
+
+  .price-cart {
+    font-size: 13px;
+  }
+
+  .ProductPage {
+    margin: 0 20px;
+  }
+}
+
+
+
+
+/**** checkout  ********/
+
+.checkout{
+width:50%;
+margin:0px auto;
+border:2px solid white;
+background-color: white;
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+row-gap: 20px;
+padding:20px;
+border-radius: 10px;
+}
+
+.checkout button{
+text-align: center;
+background-color: #22C55E;
+height:3em;
+border-radius:10px;
+
+}
+
+
+.checkout p,h4 {
+  display: flex;
+  justify-content: space-between;
+
+}
