@@ -79,7 +79,8 @@ setFilteredData(data);
 <ProductCard data={filteredData}/>
 </>
 }
-<Pagination/>
+<Pagination />
+
     </div>
     </>
   )

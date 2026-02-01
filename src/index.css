@@ -14,7 +14,8 @@ html, body {
 }
 
 .parent-class {
-  padding-bottom: 40px;
+  /* padding-bottom: 40px; */
+  height:100%;
 }
 
 /* ===================== App Root ===================== */
@@ -118,6 +119,7 @@ html, body {
   border-color: #2874f0;
 }
 
+
 /* ===================== Product Page ===================== */
 .ProductPage {
   margin: 0 100px;
@@ -190,6 +192,7 @@ html, body {
   width: 100%;
   margin-top: 12px;
   font-size: 14px;
+  
 }
 
 .price-cart button {
@@ -236,11 +239,11 @@ html, body {
 /* Cart Page */
 .cartPage{
   width:60%;
-  margin: 105px auto 0px;
+  margin: 105px 100px  0px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  column-gap: 10%;
+  justify-content: flex-start;
+  
  
 }
 
@@ -433,7 +436,7 @@ html, body {
 /**** checkout  ********/
 
 .checkout{
-width:50%;
+width:30%;
 margin:0px auto;
 border:2px solid white;
 background-color: white;
@@ -443,6 +446,9 @@ flex-wrap: wrap;
 row-gap: 20px;
 padding:20px;
 border-radius: 10px;
+position: absolute;
+top:200px;
+right:50px;
 }
 
 .checkout button{
@@ -458,4 +464,71 @@ border-radius:10px;
   display: flex;
   justify-content: space-between;
 
+}
+
+
+/******* auth   **********/
+.auth {
+  min-height: 100vh;
+  background: linear-gradient(to bottom left,#3ACFD5,#9D58BF,#E73C7E);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-child {
+  width: 390px;
+  padding: 30px;
+  background: white;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.auth-child h1 {
+  text-align: center;
+}
+
+.uspass {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding: 5px 0;
+}
+
+.uspass input {
+  border: none;
+  outline: none;
+  padding: 10px;
+  width: 100%;
+  font-size: 14px;
+}
+
+.icon {
+  font-size: 18px;
+  color: gray;
+}
+
+.forgot {
+  font-size: 13px;
+  color: #9D58BF;
+  cursor: pointer;
+  text-align: right;
+}
+
+.auth-child button {
+  height: 40px;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  background: linear-gradient(to bottom left,#3ACFD5,#9D58BF,#E73C7E);
+  transition: transform 0.2s;
+}
+
+.auth-child button:hover {
+  transform: scale(1.05);
 }

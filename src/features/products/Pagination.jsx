@@ -1,7 +1,7 @@
 import React from 'react'
 import { handleDispatch } from '../../app/store'
 
-const Pagination = () => {
+const Pagination = ({}) => {
 
   function sendAction(arg){
     handleDispatch(null, arg)
